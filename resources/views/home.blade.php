@@ -8,16 +8,16 @@
             </div>
             <div class="col-9 pt-5 ps-5">
                 <div>
-                    <h1>Conta Teste</h1>
+                    <h1>{{ $user->username }}</h1>
                 </div>
                 <div class="d-flex">
                     <div class="pe-5"><strong>8</strong> posts</div>
                     <div class="pe-5"><strong>243</strong> followers</div>
                     <div class="pe-5"><strong>227</strong> following</div>
                 </div>
-                <div class="pt-4 fw-bold">contaTeste.net</div>
-                <div>Isto é um projeto demonstrativo e esta é uma conta de testes.</div>
-                <div><a href="#">www.contateste.net</a></div>
+                <div class="pt-4 fw-bold">{{ $user->profile->title }}</div>
+                <div>{{ $user->profile->description }}</div>
+                <div><a href="#">{{ $user->profile->url ?? 'N/A' }}</a></div>
             </div>
         </div>
         <div class="row">
