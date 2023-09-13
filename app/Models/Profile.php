@@ -15,4 +15,15 @@ class Profile extends Model
     {
         return $this->belongsTo((User::class));
     }
+
+    public function profileImage()
+    {
+
+        if ($this->image) {
+            $img = $this->image;
+        } else {
+            $img = "uploads/styledoggo.jpg";
+        }
+        return '/storage/' . $img;
+    }
 }

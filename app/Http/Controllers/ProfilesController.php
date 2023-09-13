@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class ProfilesController extends Controller
 {
@@ -32,7 +33,7 @@ class ProfilesController extends Controller
 
             $imagePath = request('image')->store('profile', 'public');
 
-            $image = Image::make(public_path("profile/{$imagePath}"))->fit(1000, 1000);
+            $image = Image::make(public_path("storage/{$imagePath}"))->fit(1000, 1000);
             $image->save();
         }
 
